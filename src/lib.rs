@@ -2,15 +2,15 @@ extern crate rand;
 use rand::Rng;
 use std::num::Wrapping;
 
-macro_rules! hex_nibble{
+macro_rules! hex_nibble {
     ($x:expr, $y:expr) => (($x & (0xf << (4 * $y))) >> (4 * $y));
 }
 
-macro_rules! lsb{
+macro_rules! lsb {
     ($x:expr) => (hex_nibble!($x, 0));
 }
 
-macro_rules! gsb{
+macro_rules! gsb {
     ($x:expr) => (hex_nibble!($x, 3));
 }
 
@@ -255,7 +255,7 @@ impl Chip8{
         }
     }
     
-    fn press_button(&mut self, x : u8){
+    fn press_button(&mut self, x : u8) {
         self.keys[x as usize] = true;
         if self.locked {
             self.v[self.locked_register as usize] = x;
@@ -263,7 +263,7 @@ impl Chip8{
         }
     }
     
-    fn release_button(&mut self, x : u8){
+    fn release_button(&mut self, x : u8) {
         self.keys[x as usize] = false;
     }
     
