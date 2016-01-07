@@ -5,4 +5,5 @@ authors = ["Ben <tycoon177@gmail.com>"]
 
 
 [dependencies]
-rand = "0.3.*"
+rand = "0.3.11"
+time = "0.1"
